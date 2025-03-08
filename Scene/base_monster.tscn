@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://ceu8kd78wbkqs"]
+
+[ext_resource type="Script" path="res://Scripts/base_monster.gd" id="1_1y0m6"]
+[ext_resource type="Texture2D" uid="uid://csfmgt116kgfa" path="res://icon.svg" id="1_m2v0m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1npqg"]
+
+[node name="BaseMonster" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_1y0m6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-0.5, 1.5)
+scale = Vector2(0.179688, 0.179688)
+texture = ExtResource("1_m2v0m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1npqg")

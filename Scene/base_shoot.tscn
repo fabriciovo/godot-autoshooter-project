@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgc2daf7wrnja"]
+
+[ext_resource type="Script" path="res://Scripts/base_shoot.gd" id="1_cqt3t"]
+[ext_resource type="Texture2D" uid="uid://csfmgt116kgfa" path="res://icon.svg" id="2_rsakn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s0cty"]
+size = Vector2(14, 12)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kedps"]
+
+[node name="BaseShoot" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_cqt3t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3, 2.5)
+scale = Vector2(0.0625, 0.101562)
+texture = ExtResource("2_rsakn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 4)
+shape = SubResource("RectangleShape2D_s0cty")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_kedps")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

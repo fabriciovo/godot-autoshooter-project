@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://cup7wfeh4jl7h"]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_ok8jn"]
+[ext_resource type="Texture2D" uid="uid://csfmgt116kgfa" path="res://icon.svg" id="2_r33lg"]
+[ext_resource type="Script" path="res://Scripts/spawner.gd" id="3_36jl8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tmdnh"]
+size = Vector2(319, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4nhrk"]
+
+[node name="Main" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(12, 638)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(149.5, 0)
+shape = SubResource("RectangleShape2D_tmdnh")
+
+[node name="Player" type="CharacterBody2D" parent="."]
+script = ExtResource("1_ok8jn")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+position = Vector2(0.25, -0.25)
+scale = Vector2(0.152344, 0.152344)
+texture = ExtResource("2_r33lg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("RectangleShape2D_4nhrk")
+
+[node name="Timer" type="Timer" parent="Player"]
+autostart = true
+
+[node name="Shoots" type="Node2D" parent="."]
+
+[node name="Monsters" type="Node2D" parent="."]
+
+[node name="Spawner" type="Node2D" parent="."]
+script = ExtResource("3_36jl8")
+
+[node name="Timer" type="Timer" parent="Spawner"]
+autostart = true
+
+[connection signal="timeout" from="Player/Timer" to="Player" method="_on_timer_timeout"]
+[connection signal="timeout" from="Spawner/Timer" to="Spawner" method="_on_timer_timeout"]
