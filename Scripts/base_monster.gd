@@ -14,5 +14,4 @@ func _process(_delta: float) -> void:
 		queue_free()
 
 func damage(_damage_value) ->void:
-	print(_damage_value)
 	hp -= _damage_value

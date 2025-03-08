@@ -10,4 +10,5 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:
-	_body.damage(PlayerGlobalStats.damage)
+	if _body.is_in_group("Monster"):
+		queue_free()

@@ -18,3 +18,15 @@ config/icon="res://icon.svg"
 [autoload]
 
 PlayerGlobalStats="*res://Scripts/player_global_stats.gd"
+
+[global_group]
+
+Player=""
+Monster=""
+
+[layer_names]
+
+2d_physics/layer_1="Floor"
+2d_physics/layer_2="Wall"
+2d_physics/layer_3="Monster"
+2d_physics/layer_4="Player"
