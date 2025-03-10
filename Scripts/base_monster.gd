@@ -1,6 +1,9 @@
 class_name BaseMonster extends CharacterBody2D
 
+@onready var label:Label = $CanvasLayer/Label
+
 const VELOCITY:float = 3.0
+
 var hp:int = 1
 var level:int = 1
 
@@ -10,6 +13,7 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 func _process(_delta: float) -> void:
+	label.text = str(hp)
 	if hp <= 0:
 		queue_free()
 

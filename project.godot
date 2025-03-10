@@ -19,6 +19,13 @@ config/icon="res://icon.svg"
 
 PlayerGlobalStats="*res://Scripts/player_global_stats.gd"
 
+[display]
+
+window/size/viewport_width=360
+window/size/viewport_height=640
+window/stretch/mode="canvas_items"
+window/stretch/scale_mode="integer"
+
 [global_group]
 
 Player=""
