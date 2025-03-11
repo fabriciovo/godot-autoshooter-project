@@ -1,10 +1,10 @@
 class_name BaseMonster extends CharacterBody2D
 
-@onready var label:Label = $CanvasLayer/Label
+@onready var label:Label = $Label
 
 const VELOCITY:float = 3.0
 
-var hp:int = 1
+var hp:int = 10
 var level:int = 1
 
 func _physics_process(_delta: float) -> void:

@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://Scripts/spawner.gd" id="3_36jl8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tmdnh"]
-size = Vector2(319, 20)
+size = Vector2(360.5, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4nhrk"]
 
@@ -15,7 +15,7 @@ size = Vector2(319, 20)
 position = Vector2(12, 638)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(149.5, 0)
+position = Vector2(167.75, -8)
 shape = SubResource("RectangleShape2D_tmdnh")
 
 [node name="Player" type="CharacterBody2D" parent="."]
